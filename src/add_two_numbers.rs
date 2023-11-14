@@ -97,37 +97,10 @@ mod test {
 
     #[test]
     fn case3() {
-        let l1 = Some(Box::new(ListNode {
-            val: 9,
-            next: Some(Box::new(ListNode {
-                val: 9,
-                next: Some(Box::new(ListNode {
-                    val: 9,
-                    next: Some(Box::new(ListNode {
-                        val: 9,
-                        next: Some(Box::new(ListNode {
-                            val: 9,
-                            next: Some(Box::new(ListNode {
-                                val: 9,
-                                next: Some(Box::new(ListNode::new(9))),
-                            })),
-                        })),
-                    })),
-                })),
-            })),
-        }));
-        let l2 = Some(Box::new(ListNode {
-            val: 9,
-            next: Some(Box::new(ListNode {
-                val: 9,
-                next: Some(Box::new(ListNode {
-                    val: 9,
-                    next: Some(Box::new(ListNode::new(9))),
-                })),
-            })),
-        }));
+        let l1 = Box::new(ListNode::from_vec(vec![9, 9, 9, 9, 9, 9, 9]));
+        let l2 = Box::new(ListNode::from_vec(vec![9, 9, 9, 9]));
 
-        let res = add_two_numbers(l1, l2);
+        let res = add_two_numbers(Some(l1), Some(l2));
 
         let mut r = res.unwrap();
 

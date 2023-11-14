@@ -24,6 +24,23 @@ impl ListNode {
 
         *head
     }
+
+    pub fn to_vec(self) -> Vec<i32> {
+        let mut r = vec![];
+        let mut ptr = self;
+        loop {
+            r.push(ptr.val);
+            match ptr.next {
+                Some(v) => {
+                    ptr = *v;
+                }
+                None => {
+                    break;
+                }
+            }
+        }
+        r
+    }
 }
 
 #[cfg(test)]
