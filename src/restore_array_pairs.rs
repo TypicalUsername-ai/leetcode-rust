@@ -25,21 +25,24 @@ mod test {
     use super::*;
 
     // skipping bc random sort order
-    // #[test]
+    #[test]
+    #[ignore]
     fn case1() {
         let pairs = vec![[2, 1].into(), [3, 4].into(), [3, 2].into()];
 
         assert_eq!(restore_array(pairs), vec![4, 3, 2, 1])
     }
 
-    // #[test]
+    #[test]
+    #[ignore]
     fn case2() {
         let pairs = vec![[4, -2].into(), [1, 4].into(), [-3, 1].into()];
 
         assert_eq!(restore_array(pairs), vec![-3, 1, 4, -2])
     }
 
-    // #[test]
+    #[test]
+    #[ignore]
     fn case3() {
         let pairs = vec![[100000, -100000].into()];
 
