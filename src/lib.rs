@@ -1,6 +1,7 @@
 #![allow(unused)]
 
 mod add_two_numbers;
+mod check_arithmetic_subarrays;
 mod count_homogenous_substrings;
 mod diagonal_traverse_2;
 mod find_diff_bin_str;
