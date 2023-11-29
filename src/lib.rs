@@ -5,6 +5,7 @@ mod check_arithmetic_subarrays;
 mod count_homogenous_substrings;
 mod diagonal_traverse_2;
 mod find_diff_bin_str;
+mod hamming_weight;
 mod longest_common_prefix;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
