@@ -25,7 +25,7 @@ impl ListNode {
         *head
     }
 
-    pub fn to_vec(self) -> Vec<i32> {
+    pub fn into_vec(self) -> Vec<i32> {
         let mut r = vec![];
         let mut ptr = self;
         loop {

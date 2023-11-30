@@ -11,7 +11,7 @@ struct SeatManager {
  */
 impl SeatManager {
     fn new(n: i32) -> Self {
-        let heap = BinaryHeap::from((1..=n).into_iter().collect::<Vec<i32>>());
+        let heap = BinaryHeap::from((1..=n).collect::<Vec<i32>>());
         Self {
             reservations: RefCell::new(heap),
             max_limit: n + 1,

@@ -6,7 +6,7 @@ pub fn is_palindrome(x: i32) -> bool {
             return false;
         }
     }
-    return true;
+    true
 }
 
 #[cfg(test)]

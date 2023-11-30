@@ -4,19 +4,16 @@ fn find_diagonal_order(nums: Vec<Vec<i32>>) -> Vec<i32> {
     let mut vec = nums
         .into_iter()
         .enumerate()
-        .map(|(i, row)| {
+        .flat_map(|(i, row)| {
             row.into_iter()
                 .enumerate()
                 .map(|(j, e)| ([i + j, j], e))
                 .collect::<Vec<_>>()
         })
-        .flatten()
         .collect::<Vec<_>>();
     vec.sort_unstable();
 
-    let vec = vec.into_iter().map(|(_, e)| e).collect::<Vec<_>>();
-
-    vec
+    vec.into_iter().map(|(_, e)| e).collect::<Vec<_>>()
 }
 
 #[cfg(test)]

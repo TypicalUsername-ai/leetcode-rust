@@ -1,7 +1,7 @@
 use std::collections::HashMap;
 
 pub fn sort_vowels(s: String) -> String {
-    let wovels = vec!['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+    let wovels = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
         .iter()
         .map(|c| (*c, *c as u8))
         .collect::<HashMap<char, u8>>();
@@ -12,12 +12,11 @@ pub fn sort_vowels(s: String) -> String {
         .collect::<Vec<&u8>>();
     ints.sort();
 
-    let mut it = ints.iter().map(|i| **i as char).into_iter();
+    let mut it = ints.iter().map(|i| **i as char);
 
     s.chars()
-        .into_iter()
         .map(|c| {
-            if let Some(_) = wovels.get(&c) {
+            if wovels.get(&c).is_some() {
                 (it.next()).unwrap()
             } else {
                 c

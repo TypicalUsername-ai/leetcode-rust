@@ -8,7 +8,7 @@ fn check_arithmetic_subarrays(nums: Vec<i32>, l: Vec<i32>, r: Vec<i32>) -> Vec<b
 
             // get the subarray and sort it
             // using unstable because its faster and we dont need to preserve the old order
-            let mut sub_array: Vec<i32> = nums[left..=right].iter().map(|n| *n).collect();
+            let mut sub_array: Vec<i32> = nums[left..=right].to_vec();
             sub_array.sort_unstable();
 
             // calculating the distance between two points

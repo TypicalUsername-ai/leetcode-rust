@@ -11,7 +11,7 @@ pub fn two_sum(nums: Vec<i32>, target: i32) -> Vec<i32> {
             ret = vec![i as i32, old.unwrap()];
             break;
         }
-        let remainder = &target - num;
+        let remainder = target - num;
         if let Some(key2) = map.get(&remainder) {
             if &(i as i32) == key2 {
                 continue;

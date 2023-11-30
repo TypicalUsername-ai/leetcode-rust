@@ -6,7 +6,7 @@ fn longest_common_prefix(strs: Vec<String>) -> String {
     let mut carrs = strs.into_iter();
     let mut base = carrs.next().unwrap();
 
-    while let Some(cmp) = carrs.next() {
+    for cmp in carrs {
         let mut new_base = vec![];
 
         for (c1, c2) in base.chars().zip(cmp.chars()) {

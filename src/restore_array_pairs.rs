@@ -13,7 +13,7 @@ pub fn restore_array(adjacent_pairs: Vec<Vec<i32>>) -> Vec<i32> {
     while let Some((_, nexts)) = map.remove_entry(&curr) {
         answer.push(curr);
 
-        if let Some(next) = nexts.iter().find(|x| map.contains_key(&x)) {
+        if let Some(next) = nexts.iter().find(|x| map.contains_key(x)) {
             curr = *next;
         }
     }

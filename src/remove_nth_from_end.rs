@@ -21,7 +21,7 @@ mod test {
 
         let t = vec![1, 2, 3, 5];
 
-        assert_eq!(res.unwrap().to_vec(), t);
+        assert_eq!(res.unwrap().into_vec(), t);
     }
 
     #[test]
@@ -54,7 +54,7 @@ mod test {
 
         let t = vec![1];
 
-        assert_eq!(res.unwrap().to_vec(), t);
+        assert_eq!(res.unwrap().into_vec(), t);
     }
 
     #[test]
