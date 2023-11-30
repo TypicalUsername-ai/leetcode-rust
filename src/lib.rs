@@ -15,5 +15,6 @@ mod restore_array_pairs;
 mod seat_reservation_manager;
 mod sort_vowels;
 mod two_sum;
+mod zigzag_conversion;
 
 mod structs;
