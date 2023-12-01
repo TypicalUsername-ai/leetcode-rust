@@ -1,6 +1,7 @@
 #![allow(unused)]
 
 mod add_two_numbers;
+mod arr_strs_equal;
 mod check_arithmetic_subarrays;
 mod count_homogenous_substrings;
 mod diagonal_traverse_2;
