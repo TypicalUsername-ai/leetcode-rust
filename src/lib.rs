@@ -10,6 +10,7 @@ mod hamming_weight;
 mod longest_common_prefix;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
+mod number_of_matches;
 mod palindrome_number;
 mod remove_nth_from_end;
 mod restore_array_pairs;
