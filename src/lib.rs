@@ -7,6 +7,7 @@ mod count_homogenous_substrings;
 mod diagonal_traverse_2;
 mod find_diff_bin_str;
 mod hamming_weight;
+mod largest_3good_int;
 mod longest_common_prefix;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
