@@ -11,6 +11,7 @@ mod largest_3good_int;
 mod longest_common_prefix;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
+mod money_leet_bank;
 mod number_of_matches;
 mod palindrome_number;
 mod remove_nth_from_end;
