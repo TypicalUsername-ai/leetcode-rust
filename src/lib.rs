@@ -8,6 +8,7 @@ mod diagonal_traverse_2;
 mod find_diff_bin_str;
 mod hamming_weight;
 mod largest_3good_int;
+mod largest_odd_number;
 mod longest_common_prefix;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
