@@ -11,6 +11,7 @@ mod hamming_weight;
 mod largest_3good_int;
 mod largest_odd_number;
 mod longest_common_prefix;
+mod max_2_prod;
 mod maximum_decr_rearrange;
 mod min_pair_sum;
 mod money_leet_bank;
