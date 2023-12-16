@@ -25,6 +25,7 @@ mod seat_reservation_manager;
 mod sort_vowels;
 mod special_pos_matrix;
 mod two_sum;
+mod valid_anagram;
 mod visit_in_order;
 mod words_by_chars;
 mod zigzag_conversion;
