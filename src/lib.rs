@@ -9,6 +9,7 @@ mod diagonal_traverse_2;
 mod find_diff_bin_str;
 mod find_special_integer;
 mod hamming_weight;
+mod image_smoother;
 mod largest_3good_int;
 mod largest_odd_number;
 mod longest_common_prefix;
