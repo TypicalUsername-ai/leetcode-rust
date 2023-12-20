@@ -2,6 +2,7 @@
 
 mod add_two_numbers;
 mod arr_strs_equal;
+mod buy_2_chocolates;
 mod check_arithmetic_subarrays;
 mod count_homogenous_substrings;
 mod dest_city;
