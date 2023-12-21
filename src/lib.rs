@@ -30,6 +30,7 @@ mod special_pos_matrix;
 mod two_sum;
 mod valid_anagram;
 mod visit_in_order;
+mod widest_vert_area;
 mod words_by_chars;
 mod zigzag_conversion;
 
