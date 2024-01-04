@@ -18,6 +18,7 @@ mod longest_common_prefix;
 mod max_2_prod;
 mod max_product_difference;
 mod maximum_decr_rearrange;
+mod min_ops_empty_arr;
 mod min_pair_sum;
 mod money_leet_bank;
 mod number_of_matches;
