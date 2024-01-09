@@ -14,6 +14,7 @@ mod image_smoother;
 mod is_path_crossing;
 mod largest_3good_int;
 mod largest_odd_number;
+mod leaf_similar_trees;
 mod length_of_lis;
 mod longest_common_prefix;
 mod max_2_prod;
