@@ -25,7 +25,7 @@ pub fn leaf_similar(
     get_leafs(root1, &mut v1);
     get_leafs(root2, &mut v2);
 
-    v1.len() == v2.len() && v1.into_iter().zip(v2).all(|(a, b)| a == b)
+    v1 == v2
 }
 
 #[cfg(test)]
