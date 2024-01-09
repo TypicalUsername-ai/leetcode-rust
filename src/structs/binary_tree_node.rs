@@ -18,7 +18,7 @@ impl<T: Clone> TreeNode<T> {
     }
 
     pub fn from_bheap_array(data: &[Option<T>], index: usize) -> Option<Self> {
-        dbg!(&index);
+        // dbg!(&index);
         match data.get(index) {
             Some(opt) => match opt {
                 Some(v) => Some(Self {
