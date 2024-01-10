@@ -40,16 +40,13 @@ impl<T: Clone> TreeNode<T> {
     fn from_bheap_array_inner(data: &[Option<T>], index: usize) -> Option<Self> {
         // dbg!(&index);
         match data.get(index) {
-            Some(opt) => match opt {
-                Some(v) => Some(Self {
+            Some(opt) => opt.as_ref().map(|v| Self {
                     val: v.clone(),
                     left: Self::from_bheap_array_inner(data, index * 2 + 1)
                         .map(|v| Rc::new(RefCell::new(v))),
                     right: Self::from_bheap_array_inner(data, index * 2 + 2)
                         .map(|v| Rc::new(RefCell::new(v))),
                 }),
-                None => None,
-            },
             None => None,
         }
     }
