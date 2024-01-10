@@ -42,12 +42,12 @@ mod test {
     #[test]
     fn case1() {
         let path = "NES".to_string();
-        assert_eq!(is_path_crossing(path), false)
+        assert!(!is_path_crossing(path))
     }
 
     #[test]
     fn case2() {
         let path = "NESWW".to_string();
-        assert_eq!(is_path_crossing(path), true)
+        assert!(is_path_crossing(path))
     }
 }

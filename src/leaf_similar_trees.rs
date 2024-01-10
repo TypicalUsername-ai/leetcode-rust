@@ -3,7 +3,7 @@ type TreeNode = crate::structs::binary_tree_node::TreeNode<i32>;
 use std::cell::RefCell;
 use std::rc::Rc;
 
-fn get_leafs(root: Option<Rc<RefCell<TreeNode>>>, leafs: &mut Vec<i32>) -> () {
+fn get_leafs(root: Option<Rc<RefCell<TreeNode>>>, leafs: &mut Vec<i32>) {
     if let Some(n) = root {
         let node = n.borrow();
         if node.left.is_none() && node.right.is_none() {
@@ -80,7 +80,7 @@ mod test {
             .unwrap(),
         )));
 
-        assert_eq!(leaf_similar(root1, root2), true)
+        assert!(leaf_similar(root1, root2))
     }
 
     #[test]
@@ -91,6 +91,6 @@ mod test {
         let root2 = Some(Rc::new(RefCell::new(
             TreeNode::from_bheap_array(&[Some(1), Some(3), Some(2)], 0).unwrap(),
         )));
-        assert_eq!(leaf_similar(root1, root2), false)
+        assert!(!leaf_similar(root1, root2))
     }
 }

@@ -40,7 +40,7 @@ mod test {
 
         let res = remove_nth_from_end(Some(s), 1);
 
-        let t = vec![2];
+        let t = [2];
 
         assert_eq!(res.unwrap().val, 2);
     }

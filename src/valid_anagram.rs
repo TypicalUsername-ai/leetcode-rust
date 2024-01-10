@@ -26,13 +26,13 @@ mod test {
     fn case2() {
         let s = "rat".to_string();
         let t = "car".to_string();
-        assert_eq!(is_anagram(s, t), false)
+        assert!(!is_anagram(s, t))
     }
 
     #[test]
     fn case3() {
         let s = "rat".to_string();
         let t = "ratt".to_string();
-        assert_eq!(is_anagram(s, t), false)
+        assert!(!is_anagram(s, t))
     }
 }

@@ -71,7 +71,7 @@ mod test {
 
         let mut r = res.unwrap();
 
-        let results = vec![7, 0, 8];
+        let results = [7, 0, 8];
         for (i, digit) in results.iter().enumerate() {
             assert_eq!(&r.val, digit);
             if i != results.len() - 1 {
@@ -104,7 +104,7 @@ mod test {
 
         let mut r = res.unwrap();
 
-        let results = vec![8, 9, 9, 9, 0, 0, 0, 1];
+        let results = [8, 9, 9, 9, 0, 0, 0, 1];
         for (i, digit) in results.iter().enumerate() {
             assert_eq!(&r.val, digit);
             if i != results.len() - 1 {

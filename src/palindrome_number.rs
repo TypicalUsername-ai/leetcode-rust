@@ -20,11 +20,11 @@ mod test {
 
     #[test]
     fn case2() {
-        assert_eq!(is_palindrome(-121), false);
+        assert!(!is_palindrome(-121));
     }
 
     #[test]
     fn case3() {
-        assert_eq!(is_palindrome(10), false);
+        assert!(!is_palindrome(10));
     }
 }
