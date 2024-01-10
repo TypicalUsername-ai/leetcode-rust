@@ -17,15 +17,35 @@ impl<T: Clone> TreeNode<T> {
         }
     }
 
-    pub fn from_bheap_array(data: &[Option<T>], index: usize) -> Option<Self> {
+    pub fn to_heaped_vec(root: Option<Rc<RefCell<TreeNode<T>>>>) -> Vec<T> {
+        let mut data = vec![];
+        Self::to_sorted_slice_inner(root, &mut data);
+        data
+    }
+
+    fn to_sorted_slice_inner(ptr: Option<Rc<RefCell<TreeNode<T>>>>, arr: &mut Vec<T>) {
+        if let Some(v) = ptr {
+            let node = v.borrow();
+
+            arr.push(node.val.clone());
+            Self::to_sorted_slice_inner(node.left.clone(), arr);
+            Self::to_sorted_slice_inner(node.right.clone(), arr);
+        }
+    }
+
+    pub fn from_bheap_array(data: &[Option<T>]) -> Option<Self> {
+        Self::from_bheap_array_inner(data, 0)
+    }
+
+    fn from_bheap_array_inner(data: &[Option<T>], index: usize) -> Option<Self> {
         // dbg!(&index);
         match data.get(index) {
             Some(opt) => match opt {
                 Some(v) => Some(Self {
                     val: v.clone(),
-                    left: Self::from_bheap_array(data, index * 2 + 1)
+                    left: Self::from_bheap_array_inner(data, index * 2 + 1)
                         .map(|v| Rc::new(RefCell::new(v))),
-                    right: Self::from_bheap_array(data, index * 2 + 2)
+                    right: Self::from_bheap_array_inner(data, index * 2 + 2)
                         .map(|v| Rc::new(RefCell::new(v))),
                 }),
                 None => None,
@@ -37,47 +57,21 @@ impl<T: Clone> TreeNode<T> {
 
 #[cfg(test)]
 mod test {
+    use std::rc::Rc;
+
     use super::*;
 
     #[test]
     fn bheap_basic() {
         let data = vec![Some(1), Some(2), Some(3)];
-        let node = TreeNode::from_bheap_array(&data, 0).unwrap();
-        assert_eq!(node.val, 1);
-        assert_eq!(node.left.as_ref().unwrap().borrow().val, 2);
-        assert_eq!(node.right.as_ref().unwrap().borrow().val, 3);
+        let node = Rc::new(RefCell::new(TreeNode::from_bheap_array(&data).unwrap()));
+        assert_eq!(TreeNode::to_heaped_vec(Some(node)), [1, 2, 3]);
     }
 
     #[test]
     fn bheap_nulls() {
         let data = vec![Some(1), Some(2), Some(3), None, None, Some(4), Some(5)];
-        let node = TreeNode::from_bheap_array(&data, 0).unwrap();
-        assert_eq!(node.val, 1);
-        assert_eq!(node.left.as_ref().unwrap().borrow().val, 2);
-        assert_eq!(node.right.as_ref().unwrap().borrow().val, 3);
-        assert_eq!(
-            node.right
-                .as_ref()
-                .unwrap()
-                .borrow()
-                .left
-                .as_ref()
-                .unwrap()
-                .borrow()
-                .val,
-            4
-        );
-        assert_eq!(
-            node.right
-                .as_ref()
-                .unwrap()
-                .borrow()
-                .right
-                .as_ref()
-                .unwrap()
-                .borrow()
-                .val,
-            5
-        );
+        let node = Rc::new(RefCell::new(TreeNode::from_bheap_array(&data).unwrap()));
+        assert_eq!(TreeNode::to_heaped_vec(Some(node)), [1, 2, 3, 4, 5]);
     }
 }

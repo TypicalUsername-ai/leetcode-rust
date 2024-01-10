@@ -30,53 +30,44 @@ pub fn leaf_similar(
 
 #[cfg(test)]
 mod test {
-    use std::rc::Rc;
-
     use super::*;
-    type TreeNode = crate::structs::binary_tree_node::TreeNode<i32>;
 
     #[test]
     fn case1() {
         let root1 = Some(Rc::new(RefCell::new(
-            TreeNode::from_bheap_array(
-                &[
-                    Some(3),
-                    Some(5),
-                    Some(1),
-                    Some(6),
-                    Some(2),
-                    Some(9),
-                    Some(8),
-                    None,
-                    None,
-                    Some(7),
-                    Some(4),
-                ],
-                0,
-            )
+            TreeNode::from_bheap_array(&[
+                Some(3),
+                Some(5),
+                Some(1),
+                Some(6),
+                Some(2),
+                Some(9),
+                Some(8),
+                None,
+                None,
+                Some(7),
+                Some(4),
+            ])
             .unwrap(),
         )));
         let root2 = Some(Rc::new(RefCell::new(
-            TreeNode::from_bheap_array(
-                &[
-                    Some(3),
-                    Some(5),
-                    Some(1),
-                    Some(6),
-                    Some(7),
-                    Some(4),
-                    Some(2),
-                    None,
-                    None,
-                    None,
-                    None,
-                    None,
-                    None,
-                    Some(9),
-                    Some(8),
-                ],
-                0,
-            )
+            TreeNode::from_bheap_array(&[
+                Some(3),
+                Some(5),
+                Some(1),
+                Some(6),
+                Some(7),
+                Some(4),
+                Some(2),
+                None,
+                None,
+                None,
+                None,
+                None,
+                None,
+                Some(9),
+                Some(8),
+            ])
             .unwrap(),
         )));
 
@@ -86,10 +77,10 @@ mod test {
     #[test]
     fn case2() {
         let root1 = Some(Rc::new(RefCell::new(
-            TreeNode::from_bheap_array(&[Some(1), Some(2), Some(3)], 0).unwrap(),
+            TreeNode::from_bheap_array(&[Some(1), Some(2), Some(3)]).unwrap(),
         )));
         let root2 = Some(Rc::new(RefCell::new(
-            TreeNode::from_bheap_array(&[Some(1), Some(3), Some(2)], 0).unwrap(),
+            TreeNode::from_bheap_array(&[Some(1), Some(3), Some(2)]).unwrap(),
         )));
         assert!(!leaf_similar(root1, root2))
     }
