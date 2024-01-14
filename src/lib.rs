@@ -5,6 +5,7 @@ mod arr_strs_equal;
 mod btree_infection_time;
 mod buy_2_chocolates;
 mod check_arithmetic_subarrays;
+mod close_strings;
 mod count_homogenous_substrings;
 mod dest_city;
 mod diagonal_traverse_2;
