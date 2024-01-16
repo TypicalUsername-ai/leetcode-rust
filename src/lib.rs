@@ -30,6 +30,7 @@ mod number_of_matches;
 mod ones_sub_zeros;
 mod palindrome_number;
 mod players_zero_one_losses;
+mod randomized_set;
 mod remove_nth_from_end;
 mod restore_array_pairs;
 mod seat_reservation_manager;
