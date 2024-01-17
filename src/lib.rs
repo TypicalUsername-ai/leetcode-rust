@@ -37,6 +37,7 @@ mod seat_reservation_manager;
 mod sort_vowels;
 mod special_pos_matrix;
 mod two_sum;
+mod unique_num_occurences;
 mod valid_anagram;
 mod visit_in_order;
 mod widest_vert_area;
