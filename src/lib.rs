@@ -11,6 +11,7 @@ mod count_homogenous_substrings;
 mod dest_city;
 mod diagonal_traverse_2;
 mod find_diff_bin_str;
+mod find_matrix_uniques;
 mod find_special_integer;
 mod hamming_weight;
 mod image_smoother;
