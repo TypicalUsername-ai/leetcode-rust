@@ -21,6 +21,7 @@ mod largest_odd_number;
 mod leaf_similar_trees;
 mod length_of_lis;
 mod longest_common_prefix;
+mod longest_common_subseq;
 mod max_2_prod;
 mod max_product_difference;
 mod maximum_decr_rearrange;
