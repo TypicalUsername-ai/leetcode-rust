@@ -40,6 +40,7 @@ mod restore_array_pairs;
 mod seat_reservation_manager;
 mod sort_vowels;
 mod special_pos_matrix;
+mod step_by_step_btree;
 mod two_sum;
 mod unique_num_occurences;
 mod valid_anagram;
