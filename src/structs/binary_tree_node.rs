@@ -41,12 +41,12 @@ impl<T: Clone> TreeNode<T> {
         // dbg!(&index);
         match data.get(index) {
             Some(opt) => opt.as_ref().map(|v| Self {
-                    val: v.clone(),
-                    left: Self::from_bheap_array_inner(data, index * 2 + 1)
-                        .map(|v| Rc::new(RefCell::new(v))),
-                    right: Self::from_bheap_array_inner(data, index * 2 + 2)
-                        .map(|v| Rc::new(RefCell::new(v))),
-                }),
+                val: v.clone(),
+                left: Self::from_bheap_array_inner(data, index * 2 + 1)
+                    .map(|v| Rc::new(RefCell::new(v))),
+                right: Self::from_bheap_array_inner(data, index * 2 + 2)
+                    .map(|v| Rc::new(RefCell::new(v))),
+            }),
             None => None,
         }
     }
