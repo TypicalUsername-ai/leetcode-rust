@@ -4,19 +4,27 @@ use std::rc::Rc;
 
 type TreeNode = binary_tree_node::TreeNode<i32>;
 
-fn find_in_tree(ptr: Option<Rc<RefCell<TreeNode>>>, path: String, target: i32) -> Option<String> {
+fn find_in_tree(
+    ptr: Option<Rc<RefCell<TreeNode>>>,
+    path: &mut Vec<char>,
+    target: i32,
+) -> Option<String> {
     if let Some(ptr) = ptr {
         if ptr.borrow().val == target {
-            Some(path.to_string())
+            Some(path.iter().collect())
         } else {
-            let left = find_in_tree(ptr.borrow().left.clone(), path.clone() + "L", target);
+            path.push('L');
+            let left = find_in_tree(ptr.borrow().left.clone(), path, target);
             if left.is_some() {
                 return left;
             }
-            let right = find_in_tree(ptr.borrow().right.clone(), path + "R", target);
+            path.pop();
+            path.push('R');
+            let right = find_in_tree(ptr.borrow().right.clone(), path, target);
             if right.is_some() {
                 right
             } else {
+                path.pop();
                 None
             }
         }
@@ -31,8 +39,8 @@ pub fn get_directions(
     dest_value: i32,
 ) -> String {
     if let Some(tree) = root {
-        let mut to_start = find_in_tree(Some(tree.clone()), "".to_string(), start_value).unwrap();
-        let mut to_end = find_in_tree(Some(tree), "".to_string(), dest_value).unwrap();
+        let mut to_start = find_in_tree(Some(tree.clone()), &mut vec![], start_value).unwrap();
+        let mut to_end = find_in_tree(Some(tree), &mut vec![], dest_value).unwrap();
 
         let len = to_start
             .chars()
