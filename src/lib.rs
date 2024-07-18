@@ -13,6 +13,7 @@ mod diagonal_traverse_2;
 mod find_diff_bin_str;
 mod find_matrix_uniques;
 mod find_special_integer;
+mod good_leaf_pairs;
 mod hamming_weight;
 mod image_smoother;
 mod is_path_crossing;
