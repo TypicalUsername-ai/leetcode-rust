@@ -18,6 +18,7 @@ mod good_leaf_pairs;
 mod hamming_weight;
 mod image_smoother;
 mod is_path_crossing;
+mod kids_most_candies;
 mod largest_3good_int;
 mod largest_odd_number;
 mod leaf_similar_trees;
