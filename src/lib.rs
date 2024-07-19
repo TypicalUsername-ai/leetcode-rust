@@ -27,6 +27,7 @@ mod lucky_numbers_in_matrix;
 mod max_2_prod;
 mod max_product_difference;
 mod maximum_decr_rearrange;
+mod merge_strings_alternately;
 mod min_falling_path_sum;
 mod min_ops_empty_arr;
 mod min_pair_sum;
