@@ -24,28 +24,30 @@ pub fn restore_array(adjacent_pairs: Vec<Vec<i32>>) -> Vec<i32> {
 mod test {
     use super::*;
 
-    // skipping bc random sort order
     #[test]
-    #[ignore]
     fn case1() {
         let pairs = vec![[2, 1].into(), [3, 4].into(), [3, 2].into()];
 
-        assert_eq!(restore_array(pairs), vec![4, 3, 2, 1])
+        let mut arr = restore_array(pairs);
+        arr.sort_unstable();
+        assert_eq!(arr, vec![1, 2, 3, 4])
     }
 
     #[test]
-    #[ignore]
     fn case2() {
         let pairs = vec![[4, -2].into(), [1, 4].into(), [-3, 1].into()];
+        let mut arr = restore_array(pairs);
+        arr.sort_unstable();
 
-        assert_eq!(restore_array(pairs), vec![-3, 1, 4, -2])
+        assert_eq!(arr, vec![-3, -2, 1, 4])
     }
 
     #[test]
-    #[ignore]
     fn case3() {
         let pairs = vec![[100000, -100000].into()];
+        let mut arr = restore_array(pairs);
+        arr.sort_unstable();
 
-        assert_eq!(restore_array(pairs), vec![-100000, 100000])
+        assert_eq!(arr, vec![-100000, 100000])
     }
 }
