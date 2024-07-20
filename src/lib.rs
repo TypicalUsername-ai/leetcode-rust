@@ -42,6 +42,7 @@ mod players_zero_one_losses;
 mod randomized_set;
 mod remove_nth_from_end;
 mod restore_array_pairs;
+mod restore_matrix;
 mod seat_reservation_manager;
 mod sort_vowels;
 mod special_pos_matrix;
