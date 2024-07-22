@@ -45,6 +45,7 @@ mod randomized_set;
 mod remove_nth_from_end;
 mod restore_array_pairs;
 mod restore_matrix;
+mod reverse_wovels;
 mod seat_reservation_manager;
 mod sort_people;
 mod sort_vowels;
