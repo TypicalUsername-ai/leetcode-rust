@@ -3,6 +3,7 @@
 mod add_two_numbers;
 mod arr_strs_equal;
 mod btree_infection_time;
+mod build_matrix_conditions;
 mod buy_2_chocolates;
 mod check_arithmetic_subarrays;
 mod climbing_stairs;
